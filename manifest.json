@@ -1,0 +1,17 @@
+{
+  "name": "Lunchk",
+  "description": "2FA for your passwords",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Lunchk"
+  },
+  "icons": {
+    "16": "icons/moon16.png",
+    "24": "icons/moon24.png",
+    "64": "icons/moon64.png",
+    "128": "icons/moon128.png",
+    "512": "icons/moon512.png"
+  }
+}
