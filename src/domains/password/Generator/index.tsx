@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, H1, Input } from "@/shared/Components";
+import { Button, Text } from "@/shared/Components";
 import { Container, PasswordContainer } from "./styles";
 
 export const Generator = () => {
@@ -15,7 +15,7 @@ export const Generator = () => {
   return (
     <Container>
       <PasswordContainer>
-        <H1>{password}</H1>
+        <Text.h1>{password}</Text.h1>
         <Button color="tertiary" radii="full">
           C!
         </Button>

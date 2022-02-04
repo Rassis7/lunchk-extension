@@ -1,7 +1,7 @@
-import { styled } from "@/stitches.config";
+import { H1 } from "./h1";
 
-export const H1 = styled("h1", {
-  fontWeight: 700,
-  color: "$gray500",
-  fontSize: "3rem",
-});
+const Text = {
+  h1: H1,
+};
+
+export { Text };
