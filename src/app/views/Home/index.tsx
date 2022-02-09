@@ -7,7 +7,6 @@ export const Home = () => {
   globalStyles();
   return (
     <Container>
-      <Text.h1>Ola caralhas</Text.h1>
       {/* <QrCode code="32fe2520-82ff-11ec-a8a3-0242ac120002" /> */}
 
       <Generator />
