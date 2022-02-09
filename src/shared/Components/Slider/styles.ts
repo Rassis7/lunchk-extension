@@ -7,7 +7,7 @@ export const StyledSlider = styled(SliderPrimitive.Root, {
   alignItems: "center",
   userSelect: "none",
   touchAction: "none",
-  width: "12.5rem",
+  width: "100%",
 
   '&[data-orientation="horizontal"]': {
     height: "1.3rem",
@@ -24,7 +24,6 @@ export const StyledTrack = styled(SliderPrimitive.Track, {
   backgroundColor: "$purple200",
   position: "relative",
   flexGrow: 1,
-  borderRadius: "9999px",
 
   '&[data-orientation="horizontal"]': { height: "0.18rem" },
   '&[data-orientation="vertical"]': { width: "0.18rem" },
@@ -47,5 +46,5 @@ export const StyledThumb = styled(SliderPrimitive.Thumb, {
   justifyContent: "center",
   alignItems: "center",
   color: "$white",
-  fontSize: "0.8rem",
+  fontSize: "0.9rem",
 });
