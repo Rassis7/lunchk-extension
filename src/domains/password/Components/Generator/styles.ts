@@ -32,6 +32,7 @@ export const ActionsContainer = styled("div", {
   justifyContent: "center",
   alignItems: "center",
   width: "70vw",
+  gap: "$s",
 });
 
 export const FormItem = styled("div", {
@@ -41,4 +42,9 @@ export const FormItem = styled("div", {
   gap: "$m",
   textAlign: "start",
   width: "100%",
+});
+
+export const SwitchContainer = styled("div", {
+  display: "flex",
+  gap: "$m",
 });

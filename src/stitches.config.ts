@@ -42,6 +42,7 @@ const { styled, css, theme } = createStitches({
       small: "0.25rem",
       medium: "0.5rem",
       full: "50%",
+      extraLarger: "99rem",
     },
   },
 });
