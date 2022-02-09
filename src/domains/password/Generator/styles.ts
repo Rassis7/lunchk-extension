@@ -15,3 +15,10 @@ export const PasswordContainer = styled("div", {
   alignItems: "center",
   gap: "0.2rem",
 });
+
+export const ActionsContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+});
