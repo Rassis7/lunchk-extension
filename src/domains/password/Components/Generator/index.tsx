@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button, Input, Slider, Text } from "@/shared/Components";
-import { ActionsContainer, Container, PasswordContainer } from "./styles";
+import {
+  ActionsContainer,
+  Container,
+  FormItem,
+  PasswordButtonsContainer,
+  PasswordContainer,
+} from "./styles";
 import { Password } from "@/domains/password";
 
 export const Generator = () => {
@@ -28,32 +34,36 @@ export const Generator = () => {
   return (
     <Container>
       <Text.h1>Gere uma senha segura!</Text.h1>
-      <Text.h3>{password}</Text.h3>
 
       <PasswordContainer>
-        {/* <Input type="text" value={password} disabled /> */}
+        <Text.h3>{password}</Text.h3>
 
-        <Button color="tertiary" radii="full">
-          C
-        </Button>
-        <Button
-          color="primary"
-          radii="full"
-          onClick={handleGenerateRandomPassword}
-        >
-          R
-        </Button>
+        <PasswordButtonsContainer>
+          <Button color="tertiary" radii="full">
+            C
+          </Button>
+          <Button
+            color="primary"
+            radii="full"
+            onClick={handleGenerateRandomPassword}
+          >
+            R
+          </Button>
+        </PasswordButtonsContainer>
       </PasswordContainer>
 
-      <Text.h2>Personalize a sua senha segura</Text.h2>
+      <Text.h2>Personalize a sua senha</Text.h2>
 
       <ActionsContainer>
-        <Slider
-          defaultValue={sliderValue}
-          max={50}
-          min={8}
-          onValueChange={handleValueSlider}
-        />
+        <FormItem>
+          <Text.label>Escolha o tamanho</Text.label>
+          <Slider
+            defaultValue={sliderValue}
+            max={50}
+            min={8}
+            onValueChange={handleValueSlider}
+          />
+        </FormItem>
       </ActionsContainer>
     </Container>
   );
