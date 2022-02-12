@@ -2,46 +2,36 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
+  useContext,
   useEffect,
   useState,
 } from "react";
-import { Button, Input, Slider, Switch, Text } from "@/shared/Components";
+import { Button, Slider, Switch, Text } from "@/shared/Components";
 import {
-  ActionsContainer,
   Container,
-  FormItem,
   PasswordButtonsContainer,
   PasswordContainer,
-  SwitchContainer,
 } from "./styles";
 import { Password } from "@/domains/password";
+import { PasswordContext } from "@/domains/password/context";
+import { Actions } from "../actions";
 
 export const Generator = () => {
   const [password, setPassword] = useState<string>("");
-  const [sliderValue, setSliderValue] = useState<number[]>([15]);
-  const [hasNumber, setHasNumber] = useState(false);
-  const [hasSpecialChars, setHasSpecialChars] = useState(false);
-  const [hasUpperCase, setHasUpperCase] = useState(false);
+
+  const {
+    state: { hasNumber, hasSpecialChars, hasUpperCase, sliderValue },
+  } = useContext(PasswordContext);
 
   const handleGenerateRandomPassword = useCallback(() => {
     const { value } = Password.getRandom({
-      length: sliderValue[0],
+      length: sliderValue,
       hasNumber,
       hasSpecialChars,
       hasUpperCase,
     });
     setPassword(value);
   }, [setPassword, sliderValue, hasNumber, hasSpecialChars, hasUpperCase]);
-
-  const handleValueSlider = useCallback(
-    (value: number[]) => setSliderValue(value),
-    [setSliderValue]
-  );
-
-  const handleSwitchValue = (
-    fn: Dispatch<SetStateAction<boolean>>,
-    value: boolean
-  ) => fn(value);
 
   useEffect(() => {
     if (!sliderValue) return;
@@ -71,40 +61,6 @@ export const Generator = () => {
       </PasswordContainer>
 
       <Text.h2>Personalize a sua senha</Text.h2>
-
-      <ActionsContainer>
-        <FormItem>
-          <Text.label>Escolha o tamanho</Text.label>
-          <Slider
-            defaultValue={sliderValue}
-            max={42}
-            min={8}
-            onValueChange={handleValueSlider}
-          />
-        </FormItem>
-
-        <SwitchContainer>
-          <Switch
-            label="Números"
-            defaultChecked={hasNumber}
-            onCheckedChange={(value) => handleSwitchValue(setHasNumber, value)}
-          />
-          <Switch
-            label="Especiais"
-            defaultChecked={hasSpecialChars}
-            onCheckedChange={(value) =>
-              handleSwitchValue(setHasSpecialChars, value)
-            }
-          />
-          <Switch
-            label="Maiúsculas"
-            defaultChecked={hasUpperCase}
-            onCheckedChange={(value) =>
-              handleSwitchValue(setHasUpperCase, value)
-            }
-          />
-        </SwitchContainer>
-      </ActionsContainer>
     </Container>
   );
 };
