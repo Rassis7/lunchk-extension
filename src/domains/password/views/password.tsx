@@ -1,4 +1,4 @@
-import { Actions, Generator } from "..";
+import { Actions, Generator } from "../components";
 import { PasswordContextProvider } from "../context";
 
 export const Password = () => {
