@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && yarn move:manifest",
+    "build": "tsc && vite build",
     "build:watch": "tsc && vite build --watch && yarn move:manifest",
-    "move:manifest": "cp ./manifest.json ./dist",
     "preview": "vite preview"
   },
   "dependencies": {
