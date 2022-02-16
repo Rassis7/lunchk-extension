@@ -1,12 +1,5 @@
-import {
-  Dispatch,
-  SetStateAction,
-  useCallback,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
-import { Button, Slider, Switch, Text } from "@/shared/Components";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { Button, Text } from "@/shared/components";
 import {
   Container,
   PasswordButtonsContainer,
@@ -14,7 +7,7 @@ import {
 } from "./styles";
 import { Password } from "@/domains/password";
 import { PasswordContext } from "@/domains/password/context";
-import { Actions } from "../actions";
+import { Icons } from "@/shared/components";
 
 export const Generator = () => {
   const [password, setPassword] = useState<string>("");
@@ -33,6 +26,10 @@ export const Generator = () => {
     setPassword(value);
   }, [setPassword, sliderValue, hasNumber, hasSpecialChars, hasUpperCase]);
 
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(password);
+  }, [password]);
+
   useEffect(() => {
     if (!sliderValue) return;
 
@@ -47,15 +44,21 @@ export const Generator = () => {
         <Text.h3>{password}</Text.h3>
 
         <PasswordButtonsContainer>
-          <Button color="tertiary" radii="full">
-            C
+          <Button
+            color="tertiary"
+            radii="full"
+            title="Copiar a senha"
+            onClick={handleCopy}
+          >
+            <Icons.Copy width={24} height={24} />
           </Button>
           <Button
             color="primary"
             radii="full"
             onClick={handleGenerateRandomPassword}
+            title="Gerar nova senha"
           >
-            R
+            <Icons.Reload width={24} height={24} />
           </Button>
         </PasswordButtonsContainer>
       </PasswordContainer>
