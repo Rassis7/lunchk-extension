@@ -8,6 +8,9 @@ export const StyledButton = styled(
     border: "none",
     outline: "none",
     cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
   },
   {
     variants: {
