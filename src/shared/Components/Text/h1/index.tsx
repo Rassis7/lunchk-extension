@@ -5,7 +5,7 @@ import { HeadingProps } from "../types";
 const StyledH1 = styled("h1", {
   fontWeight: 700,
   color: "$gray400",
-  fontSize: "3rem",
+  fontSize: "2.5rem",
 });
 
 export const H1: VFC<HeadingProps> = ({ children }) => (
