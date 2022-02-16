@@ -1,4 +1,4 @@
-import { Slider, Switch, Text } from "@/shared/Components";
+import { Slider, Switch, Text } from "@/shared/components";
 import { useCallback, useContext } from "react";
 import { PasswordContext } from "@/domains/password/context";
 import { ActionsContainer, FormItem, SwitchContainer } from "./styles";

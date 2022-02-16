@@ -1,5 +1,5 @@
 import { Password } from "@/domains/password/views";
-import { QrCode, Text } from "@/shared/Components";
+import { QrCode, Text } from "@/shared/components";
 import { globalStyles } from "@/stitches.config";
 import { Container } from "./styles";
 
