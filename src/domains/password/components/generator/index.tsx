@@ -42,7 +42,7 @@ export const Generator = () => {
 
   return (
     <Container>
-      <Text.h1>🔒 Gere uma senha segura!</Text.h1>
+      <Text.h1>Gere uma senha segura!</Text.h1>
 
       <PasswordContainer>
         <PasswordBox>

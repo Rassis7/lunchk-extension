@@ -32,7 +32,7 @@ export const PasswordContextProvider: VFC<PasswordContextProvider> = ({
   const [state, dispatch] = useReducer<ReducerTypes, PasswordOptionsValuesType>(
     reducer,
     {
-      sliderValue: 15,
+      sliderValue: 8,
       hasNumber: true,
       hasSpecialChars: true,
       hasUpperCase: true,
