@@ -1,10 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import { Home } from "@/app/views";
+import { createRoot } from "react-dom/client";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+createRoot(document.getElementById("root") as HTMLElement).render(<Home />);
