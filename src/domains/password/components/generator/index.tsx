@@ -1,7 +1,9 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { Button, Text } from "@/shared/components";
 import {
+  AlertContainer,
   Container,
+  PasswordBox,
   PasswordButtonsContainer,
   PasswordContainer,
 } from "./styles";
@@ -11,6 +13,7 @@ import { Icons } from "@/shared/components";
 
 export const Generator = () => {
   const [password, setPassword] = useState<string>("");
+  const [hasCopied, setHasCopied] = useState(false);
 
   const {
     state: { hasNumber, hasSpecialChars, hasUpperCase, sliderValue },
@@ -28,6 +31,7 @@ export const Generator = () => {
 
   const handleCopy = useCallback(() => {
     navigator.clipboard.writeText(password);
+    setHasCopied((hasCopied) => !hasCopied);
   }, [password]);
 
   useEffect(() => {
@@ -38,10 +42,12 @@ export const Generator = () => {
 
   return (
     <Container>
-      <Text.h1>Gere uma senha segura!</Text.h1>
+      <Text.h1>🔒 Gere uma senha segura!</Text.h1>
 
       <PasswordContainer>
-        <Text.h3>{password}</Text.h3>
+        <PasswordBox>
+          <Text.h3>{password}</Text.h3>
+        </PasswordBox>
 
         <PasswordButtonsContainer>
           <Button
@@ -61,9 +67,13 @@ export const Generator = () => {
             <Icons.Reload width={24} height={24} />
           </Button>
         </PasswordButtonsContainer>
-      </PasswordContainer>
 
-      <Text.h2>Personalize a sua senha</Text.h2>
+        {hasCopied && (
+          <AlertContainer>
+            <p>✅ Copiado com sucesso</p>
+          </AlertContainer>
+        )}
+      </PasswordContainer>
     </Container>
   );
 };

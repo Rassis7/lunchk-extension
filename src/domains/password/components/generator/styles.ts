@@ -1,4 +1,5 @@
 import { styled } from "@/stitches.config";
+import LottieComponent from "lottie-react";
 
 export const Container = styled("div", {
   display: "flex",
@@ -6,9 +7,10 @@ export const Container = styled("div", {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  padding: "$m",
+  padding: "$l",
   gap: "$m",
   width: "100%",
+  marginBottom: "$l",
 });
 
 export const PasswordContainer = styled("div", {
@@ -19,10 +21,27 @@ export const PasswordContainer = styled("div", {
   overflow: "hidden",
 });
 
+export const PasswordBox = styled("div", {
+  "&>h2": {
+    whiteSpace: "nowrap",
+    width: "100%",
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    fontSize: "2rem",
+  },
+});
+
 export const PasswordButtonsContainer = styled("div", {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
   gap: "0.5rem",
   marginTop: "$s",
+});
+
+export const AlertContainer = styled("div", {
+  color: "$gray200",
+  padding: "$m",
+  marginTop: "$s",
+  marginBottom: "$s",
 });
