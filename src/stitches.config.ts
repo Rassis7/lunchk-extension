@@ -54,12 +54,21 @@ const globalStyles = globalCss({
     boxSizing: "border-box",
   },
   body: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "$m",
     fontFamily: "Roboto, sans-serif",
     fontSize: "16px",
     padding: "$l",
     backgroundColor: "$background",
-    width: "100vw",
     height: "100vh",
+  },
+  "div#root": {
+    width: "100vw",
+    "@media (min-width: 1024px)": {
+      width: "1024px",
+    },
   },
 });
 
