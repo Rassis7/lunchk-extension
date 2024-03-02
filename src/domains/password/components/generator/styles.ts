@@ -8,13 +8,14 @@ export const Container = styled("div", {
   textAlign: "center",
   padding: "$m",
   gap: "$m",
+  width: "100%",
 });
 
 export const PasswordContainer = styled("div", {
   padding: "$m",
   backgroundColor: "$white",
   borderRadius: "$small",
-  width: "96vw",
+  width: "100%",
   overflow: "hidden",
 });
 

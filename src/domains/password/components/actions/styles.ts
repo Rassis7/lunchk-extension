@@ -5,7 +5,7 @@ export const ActionsContainer = styled("div", {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "70vw",
+  width: "100%",
   gap: "$s",
 });
 
