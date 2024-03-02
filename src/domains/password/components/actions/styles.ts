@@ -5,8 +5,12 @@ export const ActionsContainer = styled("div", {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "70vw",
   gap: "$s",
+
+  "&>h2": {
+    textAlign: "center",
+    marginBottom: "$m",
+  },
 });
 
 export const FormItem = styled("div", {
