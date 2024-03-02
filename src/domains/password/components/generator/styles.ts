@@ -1,5 +1,4 @@
 import { styled } from "@/stitches.config";
-import LottieComponent from "lottie-react";
 
 export const Container = styled("div", {
   display: "flex",
