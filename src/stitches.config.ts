@@ -57,7 +57,6 @@ const globalStyles = globalCss({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    gap: "$m",
     fontFamily: "Roboto, sans-serif",
     fontSize: "16px",
     padding: "$l",
