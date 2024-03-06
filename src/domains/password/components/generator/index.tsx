@@ -31,7 +31,7 @@ export const Generator = () => {
 
   const handleCopy = useCallback(() => {
     navigator.clipboard.writeText(password);
-    setHasCopied((hasCopied) => !hasCopied);
+    setHasCopied(true);
   }, [password]);
 
   useEffect(() => {
