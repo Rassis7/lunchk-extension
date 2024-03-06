@@ -6,6 +6,7 @@ const StyledH2 = styled("h2", {
   fontWeight: 600,
   color: "$gray400",
   fontSize: "2rem",
+  textAlign: "center",
 });
 
 export const H2: VFC<HeadingProps> = ({ children }) => (

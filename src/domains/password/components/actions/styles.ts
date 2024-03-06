@@ -7,14 +7,16 @@ export const ActionsContainer = styled("div", {
   alignItems: "center",
   gap: "$s",
 
-  "&>h2": {
+  "&>p": {
     textAlign: "center",
     marginBottom: "$m",
+    fontWeight: 600,
+    color: "$gray400",
+    fontSize: "2rem",
   },
 });
 
 export const FormItem = styled("div", {
-  padding: "$s",
   display: "flex",
   flexDirection: "column",
   gap: "$m",

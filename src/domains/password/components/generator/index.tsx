@@ -30,8 +30,8 @@ export const Generator = () => {
   }, [setPassword, sliderValue, hasNumber, hasSpecialChars, hasUpperCase]);
 
   const handleCopy = useCallback(() => {
-    navigator.clipboard.writeText(password);
     setHasCopied(true);
+    navigator.clipboard.writeText(password);
   }, [password]);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export const Generator = () => {
 
       <PasswordContainer>
         <PasswordBox>
-          <Text.h3>{password}</Text.h3>
+          <p>{password}</p>
         </PasswordBox>
 
         <PasswordButtonsContainer>
