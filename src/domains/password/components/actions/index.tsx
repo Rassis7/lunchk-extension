@@ -17,7 +17,7 @@ export function Actions() {
 
   return (
     <ActionsContainer>
-      <Text.h2>Personalize a sua senha</Text.h2>
+      <p>Personalize a sua senha</p>
       <FormItem>
         <Text.label>Escolha o tamanho</Text.label>
         <Slider

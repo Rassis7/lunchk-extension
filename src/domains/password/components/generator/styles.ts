@@ -6,7 +6,6 @@ export const Container = styled("div", {
   justifyContent: "center",
   alignItems: "center",
   textAlign: "center",
-  padding: "$l",
   gap: "$m",
   width: "100%",
   marginBottom: "$l",
@@ -21,12 +20,13 @@ export const PasswordContainer = styled("div", {
 });
 
 export const PasswordBox = styled("div", {
-  "&>h2": {
+  "&>p": {
     whiteSpace: "nowrap",
     width: "100%",
     overflow: "hidden",
     textOverflow: "ellipsis",
     fontSize: "2rem",
+    color: "$gray200",
   },
 });
 
